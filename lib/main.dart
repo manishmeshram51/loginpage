@@ -55,7 +55,33 @@ class _LoginPageState extends State<LoginPage>
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new FlutterLogo(size: _iconAnimation.value * 100)
+              new FlutterLogo(size: _iconAnimation.value * 100),
+              new Form(
+                  child: Theme(
+                data: new ThemeData(
+                    brightness: Brightness.dark,
+                    primarySwatch: Colors.blue,
+                    inputDecorationTheme: new InputDecorationTheme(
+                        labelStyle:
+                            new TextStyle(color: Colors.blue, fontSize: 22.0))),
+                child: Container(
+                  padding: new EdgeInsets.all(40.0),
+                  child: new Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      new TextFormField(
+                          decoration:
+                              new InputDecoration(labelText: "Enter Email"),
+                          keyboardType: TextInputType.emailAddress),
+                      new TextFormField(
+                          decoration:
+                              new InputDecoration(labelText: "Enter Password"),
+                          keyboardType: TextInputType.text,
+                          obscureText: true),
+                    ],
+                  ),
+                ),
+              ))
             ],
           )
         ],
