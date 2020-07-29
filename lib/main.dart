@@ -61,23 +61,48 @@ class _LoginPageState extends State<LoginPage>
                 data: new ThemeData(
                     brightness: Brightness.dark,
                     primarySwatch: Colors.blue,
+                    hintColor: Colors.red,
                     inputDecorationTheme: new InputDecorationTheme(
                         labelStyle:
                             new TextStyle(color: Colors.blue, fontSize: 22.0))),
                 child: Container(
-                  padding: new EdgeInsets.all(40.0),
+                  padding: const EdgeInsets.all(40.0),
                   child: new Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       new TextFormField(
-                          decoration:
-                              new InputDecoration(labelText: "Enter Email"),
+                          decoration: new InputDecoration(
+                              labelText: "Email",
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.blue),
+                                //  when the TextFormField in focused
+                              )),
                           keyboardType: TextInputType.emailAddress),
                       new TextFormField(
-                          decoration:
-                              new InputDecoration(labelText: "Enter Password"),
+                          decoration: new InputDecoration(
+                              labelText: "Password",
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.blue),
+                                //  when the TextFormField in focused
+                              )),
                           keyboardType: TextInputType.text,
                           obscureText: true),
+                      new Padding(padding: EdgeInsets.only(top: 24.0)),
+                      new MaterialButton(
+                        color: Colors.blue,
+                        splashColor: Colors.white24,
+                        child: new Text(
+                          "Login".toUpperCase(),
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
+                        textColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        minWidth: 180.0,
+                        onPressed: () => {},
+                      ),
                     ],
                   ),
                 ),
